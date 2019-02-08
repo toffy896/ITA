@@ -1,0 +1,181 @@
+\documentclass[a4paper,12pt,oneside,openany]{book}
+
+	\usepackage[T1]{fontenc}
+	\usepackage[utf8]{inputenc}
+	\usepackage{lmodern}
+	\usepackage{enumitem}
+	\usepackage{hyperref}
+	\usepackage{graphicx}
+	\usepackage[nottoc]{tocbibind}
+	%\usepackage[DIV=14,BCOR=2mm,headinclude=true]{typearea}
+	\usepackage{verbatim}
+	\usepackage{pdflscape}
+	\usepackage{transparent}
+	\usepackage{rotating}
+	\usepackage{eso-pic}
+	\usepackage{longtable}
+	\usepackage{csquotes}
+	\usepackage{amsmath}
+	\usepackage{url}
+	\usepackage{mathptmx}
+	\usepackage[labelfont=bf]{caption}
+	\usepackage{pdfpages}
+	\usepackage{newtxtext,newtxmath}
+	\usepackage{array}
+	\usepackage[english]{babel}
+	\usepackage{fancyhdr}
+	\usepackage[semicolon]{natbib}
+	\usepackage{titlesec}
+	%\usepackage{everypage}
+	\usepackage[headheight=110pt]{geometry}
+	\usepackage[titles]{tocloft}
+%TOC chapter display
+\newlength\mylength
+\renewcommand\cftchappresnum{\chaptername~}
+\renewcommand\cftchapaftersnum{:}
+\settowidth\mylength{\cftchappresnum\cftchapaftersnum}
+\addtolength\cftchapnumwidth{\mylength}
+	
+%titlesec
+\titleformat{\chapter}[block]   
+{\normalfont\huge\bfseries\centering}{\chaptertitlename\ \thechapter  :}{20pt}{\Huge}
+\titlespacing{\chapter}{0pt}{-50pt}{3ex}
+\titleformat{\section} 
+{\normalfont\normalsize\bfseries}{\thesection}{1em}{\normalsize}
+\titlespacing*{\section}
+{0pt}{0ex}{0ex}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{0ex}{0ex}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\subsubsection}{0pt}{0ex}{0ex}
+
+
+	%table spacing
+	\newcommand\tstrut{\rule{0pt}{30pt}}
+	\newcommand*{\thead}[1]{\multicolumn{1}{|c|}{\bfseries #1}}
+	\newcommand\bstrut{\rule[1.0ex]{0pt}{15 pt}}
+	%unicode setting
+	\DeclareUnicodeCharacter{FB01}{\,}
+	
+%header and footer Style
+\pagestyle{fancy}
+\fancyhf{}
+\fancyheadoffset[l,r]{\marginparsep}
+\fancyheadoffset[l,r]{\marginparsep}
+\fancyhead[C]{ITA Report - Small Scale Mining Supplies}
+\fancyfoot[R]{\thepage \\ }
+\fancyfoot[C]{IME 2018/2019}
+\fancyfoot[L]{T.C. Giwa}
+
+\renewcommand\headrulewidth{1.5pt}
+\makeatletter
+\def\headrule{{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+\hrule\@height\headrulewidth\@width\headwidth
+\vskip 2pt% 2pt between lines
+\hrule\@height.5pt\@width\headwidth% lower line with .5pt line width
+\vskip-\headrulewidth
+\vskip-1.5pt}}
+\makeatother
+
+%\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+
+% Redefine the plain page style
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[C]{ITA Report - Small Scale Mining Supplies}
+  \fancyfoot[R]{\thepage}%
+  \fancyfoot[C]{IME 2018/2019}
+\fancyfoot[L]{T.C. Giwa}
+
+
+  %\renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+  \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+}
+	%page geometry
+	\geometry
+	{
+		a4paper,
+		left=20mm,
+		top=20mm,
+		right=20mm,
+		bottom=20mm,
+	}
+	%paragraph indent, space and line spacing
+	\setlength{\parindent}{0em}
+	\setlength{\parskip}{2em}
+	\renewcommand{\baselinestretch}{1.5}
+	%hyperlink
+	\hypersetup
+	{
+		colorlinks=false,
+		linkcolor=black,
+		filecolor=magenta,      
+		urlcolor=black,
+	}
+	\urlstyle{same}
+	
+	%Remove  bib hang
+	\setlength{\bibhang}{0pt}
+	
+	%abstract section
+\newcommand\abstractname{Abstract}
+\makeatletter
+  \newenvironment{abstract}{%
+      \begin{center}%
+        \normalfont\huge\bfseries \abstractname
+      \end{center}}%
+\makeatother
+ 
+\begin{document}
+	%Table of Contents and List of Tables/figure and abstract
+	\frontmatter
+\renewcommand{\abstractname}{Dedication}
+    \begin{abstract}
+        \addcontentsline{toc}{chapter}{Dedication}
+         \noindent The author dedicates this report to his lecturers, family and friends.
+    \end{abstract}
+\clearpage
+    \renewcommand{\abstractname}{Acknowledgements}
+    \begin{abstract}
+        \addcontentsline{toc}{chapter}{Acknowledgements}
+        \noindent I would like to acknowledge Small Scale Mining Supplies for the opportunity to develop my engineering and industrial skills in an appropriate environment.\par
+
+\noindent I would also like to acknowledge my family and friends for the support given in various ways. 
+    \end{abstract}
+\clearpage
+	\begin{abstract}
+	\renewcommand{\abstractname}{Abstract}
+        \addcontentsline{toc}{chapter}{Abstract}
+        \noindent This report is an industrial attachment report written at a manufacturing and technical company specialising in gold recovery plants. The report details the work done during the attachment period and the overview of the operations at Small Scale Mining Supplies.\par
+
+\noindent Small Scale Mining Supplies (SSMS) is a Manufacturing and Technical Services provider located on 6 Cowden Road, Bulawayo. SSMS comprises of the following departments Mining and Geological Services Department, Manufacturing Department, Projects Department, Accounts and HR Department, Maintenance Department and the Stores Department.\par
+
+\noindent SSMS procures and manufactures mining equipment for small scale miners. SSMS then provides the fully gold recovery plant to the miner often on a hire purchase scheme. Other packages exist which can be bought on a cash basis. Plants supplied include 1 Ton Ball Mill Plant which includes conveyors, ball mill, crusher, concentrator, amalgam barrel, hoisting system and supporting systems). SSMS also design and supply CIP Plants, Vat Leach Plants, Hammer Mill Plants, Wet Pan Plants. The determination the plant depends on the miner and their potential. \par
+
+\noindent SSMS works closely with EMA, Ministry of mines and School of Mines in the supply of technical services. Technical services include plant maintenance and geological work. Mines are also assisted to maximize their potential for a period of 3 years and assisted to ensure smooth economic running. \par
+
+    \end{abstract}
+\clearpage
+	\tableofcontents
+	\listoftables
+	\listoffigures
+\mainmatter
+\clearpage
+\include{Main Document/chapter1.tex}
+\include{Main Document/chapter2.tex}
+\include{Main Document/chapter3.tex}
+\include{Main Document/chapter4.tex}
+\include{Main Document/chapter5.tex}
+\include{Main Document/chapter5.tex}
+\include{Main Document/chapter6.tex}
+\include{Main Document/qmsproject.tex}
+\include{Main Document/hmproject.tex}
+\include{Main Document/storesproject.tex}
+\clearpage
+\bibliography{references}
+\bibliographystyle{unisa}
+\clearpage
+\chapter*{Appendices}
+\end{document}
